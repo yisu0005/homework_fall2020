@@ -1,5 +1,5 @@
-import os
 from tensorboardX import SummaryWriter
+import os
 import numpy as np
 
 class Logger:

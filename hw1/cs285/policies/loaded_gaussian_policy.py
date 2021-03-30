@@ -25,6 +25,7 @@ def read_layer(l):
         'b'].astype(np.float32)
 
 
+
 class LoadedGaussianPolicy(BasePolicy, nn.Module):
     def __init__(self, filename, **kwargs):
         super().__init__(**kwargs)
@@ -81,7 +82,7 @@ class LoadedGaussianPolicy(BasePolicy, nn.Module):
         h = normed_obs
         for layer in self.hidden_layers:
             h = layer(h)
-            h = self.non_lin(h)
+            h = self.non_lin(h) # self.non_lin.forward(h)
         return self.output_layer(h)
 
     ##################################
